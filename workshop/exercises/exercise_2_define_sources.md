@@ -1,7 +1,7 @@
 # Exercise 2 - Define Sources and Freshness
 
 ## Goal
-Define raw sources in YAML and configure source freshness checks.
+Define raw sources in YAML to be ready for modeling.
 
 ## Timebox
 10 minutes
@@ -12,9 +12,12 @@ Define raw sources in YAML and configure source freshness checks.
 
 ## Setup
 
+Typically, we would start our modelling from raw datasources, as opposed to the example models you saw in exercise 1.
+
+### Data Source
+We will define a single source named `ecom` that points to the raw e-commerce data stored in CSV files. Each table within this source will correspond to a different aspect of the e-commerce data, such as customers, orders, items, stores, products, and supplies.
 We are going to use jaffle-shop data and the [ability of duckdb to directly read from csv](https://duckdb.org/docs/data/csv).
 
-Use the following command from the root of the repository to generate the data in the `jaffle-data` directory:
 
 ## Tasks
 1. Create a new file at `models/staging/__sources.yml` in which we will define the sources.
@@ -36,26 +39,3 @@ sources:
 - `raw_stores`
 - `raw_products`
 - `raw_supplies`
-3. Add `loaded_at_field` for tables with timestamps.
-4. Configure freshness thresholds (warning and error).
-5. Run freshness:
-
-```bash
-dbt source freshness
-```
-6. Inspect the results and check the generated dbt documentation:
-
-```bash
-dbt docs generate
-dbt docs serve
-
-## Checkpoint
-- Freshness command finishes.
-- Source nodes appear in documentation lineage.
-
-## Expected Artifacts
-- `models/staging/__sources.yml`
-- Generated dbt documentation
-
-## Stretch
-Play with the freshness configuration to see how it affects the results. For example, change the warning threshold to 1 day and the error threshold to 10000 days. Then run `dbt source freshness` again and observe the results.
