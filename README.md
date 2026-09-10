@@ -16,9 +16,6 @@ To enable local development and testing, we will be using [DuckDB](https://duckd
 The repository already contains a `pyproject.toml` file that specifies the required dependencies for the workshop. To set up the project, run the following commands:
 
 ```bash
-To set up the project, run the following commands:
-
-```bash
 git clone https://github.com/ing-analytics/ing-dbt-workshop.git
 cd ing-dbt-workshop
 uv sync
@@ -41,3 +38,7 @@ Check that you can run the duckdb UI:
 ```bash
 duckdb --ui
 ```
+
+
+> [!INFO]  
+> Because `dbt 2.0` is still in beta and works differently, we chose to run this workshop with `dbt 1.x`.

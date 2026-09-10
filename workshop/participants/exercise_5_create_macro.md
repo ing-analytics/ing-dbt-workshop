@@ -11,7 +11,7 @@ Create and reuse a macro in model logic or tests.
 
 ## Tasks
 1. Create macro file in `macros/`.
-2. Implement a reusable helper with one input argument.
+2. Implement a reusable helper with one input argument. For instance, a macro that converts dollar to cents.
 3. Use it in a model select expression or test definition.
 4. Run impacted model and tests:
 
