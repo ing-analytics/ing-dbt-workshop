@@ -11,7 +11,7 @@ Implement and run four dbt test types.
 
 ## Data Tests
 1. Standard data test:
-- Add `not_null` and `unique` to a model YAML column.
+- Add `not_null` and `unique` to a model YAML column. You can see for the example models how this was done.
 
 2. Singular data test:
 - Create SQL test in `tests/` that returns invalid rows only.

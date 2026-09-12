@@ -1,0 +1,12 @@
+sources:
+  - name: ecom
+    description: "E-commerce raw data source."
+    meta:
+      external_location: "/Users/ai49st/Developer/Learning/ing-dbt-workshop/jaffle_data/{name}.csv"
+    tables:
+      - name: raw_customers
+      - name: raw_orders
+      - name: raw_items
+      - name: raw_stores
+      - name: raw_products
+      - name: raw_supplies

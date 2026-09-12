@@ -11,7 +11,7 @@ Create a new staging model with basic transformations.
 - Source definitions are in place
 
 ## Tasks
-1. Create `models/staging/stg_payments.sql`.
+1. Create `models/staging/stg_orders.sql`.
 2. Read from a source table using `source()`.
 3. Add at least two transformations:
 - Rename one column
@@ -19,7 +19,7 @@ Create a new staging model with basic transformations.
 4. Build only your new model:
 
 ```bash
-dbt run --select stg_payments
+dbt run --select stg_orders
 ```
 
 5. Inspect the generated table with DuckDB UI.
@@ -29,7 +29,7 @@ dbt run --select stg_payments
 - Output has expected columns and types.
 
 ## Expected Artifacts
-- `models/staging/stg_payments.sql`
+- `models/staging/stg_orders.sql`
 
 ## Stretch
 Add one derived metric column (for example a boolean or ratio).

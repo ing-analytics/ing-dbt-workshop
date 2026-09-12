@@ -1,4 +1,4 @@
-jaffle_shop:
+ing_workshop:
   outputs:
     dev:
       type: duckdb

@@ -4,7 +4,7 @@
 Define raw sources in YAML to be ready for modeling.
 
 ## Timebox
-10 minutes
+5 minutes
 
 ## Starting Point
 - Exercise 1 completed
@@ -32,10 +32,14 @@ sources:
       external_location: "{path_to_repo}/ing-dbt-workshop/jaffle_data/{name}.csv"
 ```
 
-1. Now include these tables:
-- `raw_customers`
-- `raw_orders`
-- `raw_items`
-- `raw_stores`
-- `raw_products`
-- `raw_supplies`
+3. Add the necessary tables under the `tables` section of the source definition:
+
+```yaml
+    tables:
+      - name: raw_customers
+      - name: raw_orders
+      - name: raw_items
+      - name: raw_stores
+      - name: raw_products
+      - name: raw_supplies
+```
