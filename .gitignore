@@ -220,3 +220,4 @@ jaffle_shop/*
 logs/*
 .user.yml
 target/*
+**/logs/**
