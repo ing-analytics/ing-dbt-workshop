@@ -1,0 +1,13 @@
+    unit_tests:
+      - name: cents_to_dollars
+        model: mrt_customer_agg
+        given: 
+          - input: ref('stg_orders')
+            rows: 
+            - {customer_id: 1, order_id: 1, order_total: 100}
+            - {customer_id: 1, order_id: 2, order_total: 200}
+            - {customer_id: 2, order_id: 3, order_total: 300}
+        expect:
+          rows:
+            - {customer_id: 1, total_orders: 2, total_spent: 300}
+            - {customer_id: 2, total_orders: 1, total_spent: 300}

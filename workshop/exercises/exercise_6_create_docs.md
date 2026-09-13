@@ -3,10 +3,9 @@
 ## Goal
 Generate dbt docs and validate lineage and metadata.
 
-TODO explain docs in markdown 
 
 ## Timebox
-20 minutes
+10 minutes
 
 ## Starting Point
 - Previous exercises completed
@@ -39,4 +38,4 @@ dbt docs serve
 - Generated docs metadata in `target/`
 
 ## Stretch
-Document all columns for one model in detail.
+Use a markdown description for one model and one source to enhance the documentation.

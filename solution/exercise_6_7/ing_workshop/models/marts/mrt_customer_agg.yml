@@ -1,0 +1,17 @@
+models:
+  - name: mrt_customer_agg
+    description: "{{ doc('mrt_customer_agg_doc') }}"
+    columns:
+      - name: customer_id
+        description: "Unique identifier for the customer. Foreign key to the customer dimension."
+        tests:
+          - not_null
+          - unique
+      - name: total_orders
+        description: "Total number of orders placed by this customer across all time."
+        tests:
+          - not_null
+      - name: total_spent
+        description: "Total amount (in dollars) spent by this customer across all orders."
+        tests:
+          - not_null
