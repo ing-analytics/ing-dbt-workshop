@@ -10,6 +10,11 @@ To enable local development and testing, we will be using [DuckDB](https://duckd
 
 - Python 3.10 or higher installed
 - `uv` installed (`pip install uv`)
+- Preferably a code editor like VSCode or PyCharm in which you can run the exercises and interact with the project files easily.
+
+
+### Alternative if you do not have Python 3.10 or higher installed on your local machine
+We prefer you to run the exercises locally as that provides a more realistic development experience. If that is not possible, you can use GitHub Codespaces. GitHub Codespaces provides a cloud-based development environment with the necessary dependencies pre-installed, allowing you to follow along with the workshop without worrying about local setup.
 
 ## Setup
 
