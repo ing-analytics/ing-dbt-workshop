@@ -37,12 +37,17 @@ Specify the schema you want to use for your models. For example, you can use `in
 Default schema used would be `main`.
 
 2. Validate that now dbt can read the project and profile:
+Move to the dbt project directory:
+
+```bash
+cd {project_name}
+```
 
 ```bash
 dbt debug
 ```
 
-3. Inspect the project structure and contents. Have a look at the profiles.yml file and the dbt_project.yml file. 
+1. Inspect the project structure and contents. Have a look at the profiles.yml file and the dbt_project.yml file. 
 
 
 ```bash
