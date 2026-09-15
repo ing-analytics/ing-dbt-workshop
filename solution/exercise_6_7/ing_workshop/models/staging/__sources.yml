@@ -1,0 +1,66 @@
+sources:
+  - name: ecom
+    description: "{{ doc('ecom_source_doc') }}"
+    tables:
+      - name: raw_customers
+        description: "Customer master data containing customer information."
+        columns:
+          - name: id
+            description: "Unique customer identifier"
+          - name: first_name
+            description: "Customer's first name"
+          - name: last_name
+            description: "Customer's last name"
+          - name: email
+            description: "Customer's email address"
+      - name: raw_orders
+        description: "{{ doc('raw_orders_source') }}"
+        columns:
+          - name: id
+            description: "Unique order identifier"
+          - name: customer
+            description: "Customer ID (foreign key to raw_customers)"
+          - name: tax_paid
+            description: "Tax amount in cents"
+          - name: store_id
+            description: "Store ID where order was placed"
+          - name: order_total
+            description: "Total order amount in cents"
+          - name: subtotal
+            description: "Order subtotal in cents (before tax)"
+      - name: raw_items
+        description: "Order line items containing individual products ordered in each order."
+        columns:
+          - name: id
+            description: "Unique line item identifier"
+          - name: order_id
+            description: "Reference to the order"
+          - name: product_id
+            description: "Reference to the product"
+      - name: raw_stores
+        description: "Physical store locations and store details."
+        columns:
+          - name: id
+            description: "Unique store identifier"
+          - name: store_name
+            description: "Name of the store location"
+          - name: location
+            description: "Physical location/address of the store"
+      - name: raw_products
+        description: "Product catalog containing all products available for sale."
+        columns:
+          - name: id
+            description: "Unique product identifier"
+          - name: name
+            description: "Product name"
+          - name: price
+            description: "Product price in cents"
+      - name: raw_supplies
+        description: "Supply chain data for inventory and supply management."
+        columns:
+          - name: id
+            description: "Unique supply identifier"
+          - name: product_id
+            description: "Reference to the product"
+          - name: quantity
+            description: "Supply quantity available"

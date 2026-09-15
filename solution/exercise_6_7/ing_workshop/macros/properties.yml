@@ -1,0 +1,5 @@
+macros:
+  - name: cents_to_dollars
+    description: "Converts a value from cents to dollars."  
+  - name: test_column_a_smaller_than_column_b  
+    description: "Checks if column A is smaller than column B."

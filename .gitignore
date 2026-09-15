@@ -218,3 +218,6 @@ __marimo__/
 jaffle_shop/*
 *.duckdb
 logs/*
+.user.yml
+target/*
+**/logs/**

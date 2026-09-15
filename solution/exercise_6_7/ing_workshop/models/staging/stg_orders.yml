@@ -1,0 +1,46 @@
+models:
+  - name: stg_orders
+    description: "{{ doc('stg_orders_doc') }}"
+    data_tests:
+      - column_a_smaller_than_column_b:
+          arguments:
+            column_a: subtotal
+            column_b: order_total
+      - dbt_utils.expression_is_true:
+          name: subtotal_plus_tax_equals_order_total
+          arguments:
+            expression: "subtotal + tax_paid = order_total"
+    columns:
+      - name: order_id
+        description: "Primary key for the orders table. Unique identifier for each order."
+        data_tests:
+          - not_null
+          - unique
+      - name: customer_id
+        description: "Reference to the customer placing the order. Foreign key to customer dimension."
+        tests:
+          - not_null
+      - name: store_id
+        description: "Identifier for the physical store where the order was placed."
+        tests:
+          - not_null
+      - name: tax_paid_cents
+        description: "Tax paid for the order in cents (raw value from source system)."
+      - name: tax_paid
+        description: "Tax paid for the order in dollars, converted from cents using the cents_to_dollars macro."
+      - name: order_total_cents
+        description: "Total order amount in cents (raw value from source system)."
+        tests:
+          - not_null
+      - name: order_total
+        description: "Total order amount in dollars, converted from cents using the cents_to_dollars macro."
+        tests:
+          - not_null
+      - name: subtotal_cents
+        description: "Order subtotal in cents (raw value from source system, excludes tax)."
+        tests:
+          - not_null
+      - name: subtotal
+        description: "Order subtotal in dollars, converted from cents using the cents_to_dollars macro. Should be less than or equal to order_total."
+        tests:
+          - not_null   
