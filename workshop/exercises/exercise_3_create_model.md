@@ -2,6 +2,7 @@
 
 ## Goal
 Create a new staging model with basic transformations.
+dbt docs for SQL models can be found [here](https://docs.getdbt.com/docs/build/sql-models?version=1)
 
 ## Timebox
 10 minutes
@@ -11,11 +12,11 @@ Create a new staging model with basic transformations.
 - Source definitions are in place
 
 ## Tasks
-1. Create `models/staging/stg_orders.sql`.
+1. Create `models/staging/stg_orders.sql`. 
 2. Read from a source table using `source()`.
-3. Add at least two transformations:
-- Rename one column
-- Cast one column type
+3. Transform at least two columns by for instance:
+- Renaming columns
+- Casting column types
 4. Build only your new model:
 
 ```bash
@@ -27,6 +28,11 @@ dbt run --select stg_orders
 ## Checkpoint
 - Model compiles and runs successfully.
 - Output has expected columns and types.
+- You can see the lineage of the source and model in the dbt documentation. 
+  ```bash
+  dbt docs generate
+  dbt docs serve
+  ```
 
 ## Expected Artifacts
 - `models/staging/stg_orders.sql`

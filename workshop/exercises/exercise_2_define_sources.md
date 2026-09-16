@@ -2,6 +2,7 @@
 
 ## Goal
 Define raw sources in YAML to be ready for modeling.
+dbt docs for sources can be found [here](https://docs.getdbt.com/docs/build/sources?version=1)
 
 ## Timebox
 5 minutes
@@ -18,10 +19,18 @@ Typically, we would start our modelling from raw datasources, as opposed to the 
 We will define a single source named `ecom` that points to the raw e-commerce data stored in CSV files. Each table within this source will correspond to a different aspect of the e-commerce data, such as customers, orders, items, stores, products, and supplies.
 We are going to use jaffle-shop data and the [ability of duckdb to directly read from csv](https://duckdb.org/docs/data/csv).
 
+You can explore the csv's through duckdb by running queries directly on them. For example in your terminal:
+
+```bash
+duckdb
+SELECT * FROM {path_to_csv};
+```
+
 
 ## Tasks
-1. Create a new file at `models/staging/__sources.yml` in which we will define the sources.
-2. We will now use the following source definition, using the ability for duckdb to [directly read from csv](https://github.com/duckdb/dbt-duckdb#reading-from-external-files) as a starting point. 
+1. Create a staging folder. You can read more about good practices to structure the dbt project [here](https://docs.getdbt.com/best-practices/how-we-structure/1-guide-overview?version=2). Another option for layered architecture is medallion architecture (bronze/silver/gold).
+2. Create a new file at `models/staging/__sources.yml` in which we will define the sources.
+3. We will now use the following source definition, using the ability for duckdb to [directly read from csv](https://github.com/duckdb/dbt-duckdb#reading-from-external-files) as a starting point. 
 
 Add it to your `__sources.yml` file:
 ```
@@ -32,7 +41,7 @@ sources:
       external_location: "{path_to_repo}/ing-dbt-workshop/jaffle_data/{name}.csv"
 ```
 
-3. Add the necessary tables under the `tables` section of the source definition:
+4. Add the necessary tables under the `tables` section of the source definition:
 
 ```yaml
     tables:
@@ -43,3 +52,14 @@ sources:
       - name: raw_products
       - name: raw_supplies
 ```
+
+You can inspect the sources as follows
+
+```bash
+dbt show --inline "select *
+    from {{ source('ecom', 'raw_orders') }}"
+```
+
+It will automatically show the first few rows of the result.
+
+

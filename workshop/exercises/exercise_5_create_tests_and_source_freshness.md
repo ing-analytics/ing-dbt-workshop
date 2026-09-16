@@ -10,6 +10,9 @@ Implement and run four dbt test types.
 - Models are building successfully
 
 ## Data Tests
+
+dbt docs for tests can be found [here](https://docs.getdbt.com/docs/build/tests?version=1)
+
 1. Standard data test:
 - Create a YAML file for the model if it doesn't already exist. For instance the `stg_orders` model.
 - Add `not_null` and `unique` to a model column. You can see for the example models how this was done.
@@ -30,6 +33,8 @@ dbt test --select <singular_test_name>
 
 ## Source Freshness
 
+dbt docs for source freshness can be found [here](https://docs.getdbt.com/docs/build/sources?version=1#source-data-freshness)   
+
 1. Add `loaded_at_field` for tables with timestamps in `models/staging/__sources.yml`.
 2. Configure freshness thresholds (warning and error).
 3. Run freshness:
@@ -46,6 +51,8 @@ dbt source freshness
 
 
 ## Unit Tests
+
+dbt docs for unit tests can be found [here](https://docs.getdbt.com/docs/build/unit-tests?version=1)
 
 1. Create a new model under marts that aggregates customer orders
 2. Unit test:

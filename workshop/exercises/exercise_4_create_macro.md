@@ -3,6 +3,8 @@
 ## Goal
 Create and reuse a macro in model logic or tests.
 
+dbt docs for jinja and macros can be found [here](https://docs.getdbt.com/docs/build/jinja-macros?version=1)
+
 ## Timebox
 10 minutes
 
@@ -12,7 +14,7 @@ Create and reuse a macro in model logic or tests.
 ## Tasks
 1. Create macro file in `macros/`.
 2. Implement a reusable helper with one input argument. For instance, a macro that converts dollar to cents.
-3. Use it in a model select expression or test definition. For example, convert `tax_paid_cents` to `tax_paid` using the macro in the staging model from the previous exercise.
+3. Use it in a model select expression or test definition. For example, add new columns that convert existing cents values to dollars.
 4. Run impacted model and tests:
 
 ```bash
