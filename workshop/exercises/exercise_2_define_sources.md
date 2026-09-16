@@ -1,4 +1,4 @@
-# Exercise 2 - Define Sources and Freshness
+# Exercise 2 - Define Sources
 
 ## Goal
 Define raw sources in YAML to be ready for modeling.

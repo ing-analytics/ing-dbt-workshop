@@ -4,7 +4,6 @@
 Set up and validate a working dbt project locally.
 `dbt` is a command line tool that enables analytics engineers to transform data in their warehouse more effectively. This exercise will help you get started with dbt by creating a new project, validating the setup, and running some initial commands.
 
-T
 
 ## Timebox
 20 minutes
