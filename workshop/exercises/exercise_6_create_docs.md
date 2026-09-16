@@ -3,6 +3,7 @@
 ## Goal
 Generate dbt docs and validate lineage and metadata.
 
+Info about dbt documentation, including how to add descriptions and metadata, can be found [here](https://docs.getdbt.com/docs/build/documentation?version=1)
 
 ## Timebox
 10 minutes
